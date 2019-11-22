@@ -1,2 +1,2 @@
-# att-hackathon
-Our topic is yet to be published.
+# Smart Chicken mobile application
+Written in Vue Native
