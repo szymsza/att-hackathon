@@ -12,6 +12,10 @@
 */
 
 
+// Humidity data
 Route::get("humidity", "HumidityController@get");
-
 Route::post("humidity", "HumidityController@set");
+
+// Temperature data
+Route::get("temperature", "TemperatureController@get");
+Route::post("temperature", "TemperatureController@set");

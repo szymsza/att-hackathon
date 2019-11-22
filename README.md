@@ -4,9 +4,10 @@ Written in Laravel
 # What it does
 - Temperature
     - Receives (and stores) settings from the app - range of acceptable temperature
-    - Receives (and stores) data from Arduino
+    - Receives (and stores) data from Arduino ✔
     - Sends commands to control temperature to Arduino (red LED, fan)
     - Sends settings to the app
+    - Sends data to the app ✔
 - Humidity ‎✔
     - Receives (and stores) data from Arduino ‎✔
     - Sends data to the app ‎✔
@@ -25,7 +26,7 @@ Written in Laravel
 # Models
 - user - users and their keys ‎✔
 - humidity_data - data from Arduino about humidity‎ ✔
-- temperature_data - data from Arduino about temperature
+- temperature_data - data from Arduino about temperature ✔
 - temperature_setting - settings on when to start heating/AC
 - sunlight_data - data from Arduino about sunlight amount
 - opening_settings - settings on when to close/open the door (based on sunlight, time, chickenout)
@@ -42,4 +43,8 @@ Written in Laravel
 
 ## Humidity
 - `GET /humidity` returns latest humidity level with timestamp
-- `POST /humidity?humidity=int` save humidity value 
+- `POST /humidity?humidity=int` saves humidity value 
+
+## Temperature
+- `GET /temperature` returns latest temperature with timestamp
+- `POST /temperature?temperature=int` saves temperature value 

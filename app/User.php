@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function humidity() {
 		return $this->hasMany("\App\HumidityData");
 	}
+
+	public function temperature() {
+		return $this->hasMany("\App\TemperatureData");
+	}
 }
