@@ -7,9 +7,9 @@ Written in Laravel
     - Receives (and stores) data from Arduino
     - Sends commands to control temperature to Arduino (red LED, fan)
     - Sends settings to the app
-- Humidity
-    - Receives (and stores) data from Arduino
-    - Sends data to the app
+- Humidity ‎✔
+    - Receives (and stores) data from Arduino ‎✔
+    - Sends data to the app ‎✔
 - Door opening
     - Receives (and stores) settings from the app - times, brightness
     - Receives (and stores) data from Arduino about openness and brightness
@@ -23,8 +23,8 @@ Written in Laravel
     - Sends data about predator breaches to the app
     
 # Models
-- user - users and their keys
-- humidity_data - data from Arduino about humidity
+- user - users and their keys ‎✔
+- humidity_data - data from Arduino about humidity‎ ✔
 - temperature_data - data from Arduino about temperature
 - temperature_setting - settings on when to start heating/AC
 - sunlight_data - data from Arduino about sunlight amount
@@ -33,3 +33,13 @@ Written in Laravel
 - chicken_entries - entries of chicken entering/leaving the house
 - chicken_counts - current number of chicken in the house
 - predator_data - info about predator breaches
+
+# API
+- All API request require authentication token assigned to your user account
+- Send `arduino` parameter for request from the box or `app` for request from the app
+- API routes are prefixed with `/api/`
+- All responses are in JSON
+
+## Humidity
+- `GET /humidity` returns latest humidity level with timestamp
+- `POST /humidity?humidity=int` save humidity value 

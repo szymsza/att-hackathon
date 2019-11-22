@@ -13,3 +13,5 @@
 
 
 Route::get("humidity", "HumidityController@get");
+
+Route::post("humidity", "HumidityController@set");

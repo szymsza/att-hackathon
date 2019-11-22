@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password'
     ];
+
+    public function humidity() {
+		return $this->hasMany("\App\HumidityData");
+	}
 }
