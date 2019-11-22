@@ -1,2 +1,2 @@
-# att-hackathon
-Our topic is yet to be published.
+# Smart Chicken server
+Written in Laravel
