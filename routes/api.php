@@ -21,5 +21,4 @@ Route::get("temperature", "TemperatureController@get");
 Route::post("temperature", "TemperatureController@set");
 
 // Sunlight data
-Route::get("sunlight", "SunlightController@get");
 Route::post("sunlight", "SunlightController@set");
