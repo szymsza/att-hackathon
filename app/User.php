@@ -46,4 +46,8 @@ class User extends Authenticatable
 	public function chickenCount() {
 		return $this->hasOne("\App\ChickenCount");
 	}
+
+	public function predatorBreaches() {
+		return $this->hasMany("\App\PredatorBreach");
+	}
 }

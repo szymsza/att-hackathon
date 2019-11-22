@@ -54,4 +54,8 @@ Written in Laravel
 
 ## Chicken count
 - `GET /chicken-count` returns latest number of chickens inside with timestamp
-- `POST /chicken-entry?entered=boolean` saves chicken entry/departure  
+- `POST /chicken-entry?entered=boolean` saves chicken entry/departure
+
+## Predator breaches
+- `GET /predator-breach` returns latest predator breach with timestamp and alert information
+- `POST /predator-breach` saves predator breach

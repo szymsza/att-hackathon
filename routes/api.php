@@ -26,3 +26,7 @@ Route::post("sunlight", "SunlightController@set");
 // Chicken count
 Route::get("chicken-count", "ChickenCountController@get");
 Route::post("chicken-entry", "ChickenCountController@entry");
+
+// Chicken count
+Route::get("predator-breach", "PredatorBreachController@get");
+Route::post("predator-breach", "PredatorBreachController@set");
