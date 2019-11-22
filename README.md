@@ -1,11 +1,11 @@
-# Happy Chick House - server
+# Happy Chickhouse - server
 Written in Laravel
 
 # What it does
 - Temperature
     - Receives (and stores) settings from the app - range of acceptable temperature
     - Receives (and stores) data from Arduino
-    - Sends commands to control temperature to Arduino (red LED, door opening)
+    - Sends commands to control temperature to Arduino (red LED, fan)
     - Sends settings to the app
 - Humidity
     - Receives (and stores) data from Arduino
@@ -21,3 +21,15 @@ Written in Laravel
 - Predators
     - Receives (and stores) data from Arduino about predator breaches
     - Sends data about predator breaches to the app
+    
+# Models
+- user - users and their keys
+- humidity_data - data from Arduino about humidity
+- temperature_data - data from Arduino about temperature
+- temperature_setting - settings on when to start heating/AC
+- sunlight_data - data from Arduino about sunlight amount
+- opening_settings - settings on when to close/open the door (based on sunlight, time, chickenout)
+- opening_fails - data about door failing to close/open
+- chicken_entries - entries of chicken entering/leaving the house
+- chicken_counts - current number of chicken in the house
+- predator_data - info about predator breaches

@@ -12,7 +12,4 @@
 */
 
 
-	Route::get('user', function (Request $request) {
-    	return "Api route";
-	});
-
+Route::get("humidity", "HumidityController@get");
