@@ -3,10 +3,10 @@ Written in Laravel
 
 # What it does
 - Temperature
-    - Receives (and stores) settings from the app - range of acceptable temperature
+    - Receives (and stores) settings from the app - range of acceptable temperatures ✔
     - Receives (and stores) data from Arduino ✔
     - Sends commands to control temperature to Arduino (red LED, fan)
-    - Sends settings to the app
+    - Sends settings to the app ✔
     - Sends data to the app ✔
 - Humidity ‎✔
     - Receives (and stores) data from Arduino ‎✔
@@ -27,7 +27,7 @@ Written in Laravel
 - user - users and their keys ‎✔
 - humidity_data - data from Arduino about humidity‎ ✔
 - temperature_data - data from Arduino about temperature ✔
-- temperature_settings - settings on when to start heating/AC
+- temperature_settings - settings on when to start heating/AC ✔
 - opening_settings - settings on when to close/open the door (based on sunlight, time, chickenout)
 - chicken_entries - entries of chicken entering/leaving the house ✔
 - chicken_counts - current number of chicken in the house ✔
@@ -44,8 +44,13 @@ Written in Laravel
 - `POST /humidity?value=int` saves humidity value 
 
 ## Temperature
+### Data
 - `GET /temperature` returns latest temperature with timestamp
 - `POST /temperature?value=int` saves temperature value 
+
+### Settings
+- `GET /temperature/settings` returns array of temperature settings
+- `POST /temperature/settings?(active=boolean)&(min=int)&(max=int)` saves temperature settings
 
 ## Chicken count
 - `GET /chicken-count` returns latest number of chickens inside with timestamp

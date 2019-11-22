@@ -20,6 +20,10 @@ Route::post("humidity", "HumidityController@set");
 Route::get("temperature", "TemperatureController@get");
 Route::post("temperature", "TemperatureController@set");
 
+// Temperature settings
+Route::get("temperature/settings", "TemperatureController@getSettings");
+Route::post("temperature/settings", "TemperatureController@setSettings");
+
 // Chicken count
 Route::get("chicken-count", "ChickenCountController@get");
 Route::post("chicken-entry", "ChickenCountController@entry");
