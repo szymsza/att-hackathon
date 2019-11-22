@@ -1,4 +1,4 @@
-# Smart Chicken server
+# Happy Chick House - server
 Written in Laravel
 
 # What it does
