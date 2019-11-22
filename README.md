@@ -12,28 +12,26 @@ Written in Laravel
     - Receives (and stores) data from Arduino ‎✔
     - Sends data to the app ‎✔
 - Door opening
-    - Receives (and stores) settings from the app - times and/or brightness ✔
+    - Receives (and stores) settings from the app - times and/or brightne
     - Receives (and stores) data from Arduino about sunlight ✔
-    - Sends commands to open/close the door to Arduino based on time and/or brightness and/or chicken count
+    - Sends commands to open/close the door to Arduino based on time and/or sun and/or chicken count
     - Sends settings to the app
 - Counting chickens
-    - Receives (and stores) settings from the app about total chicken count
     - Receives (and stores) data from Arduino about chicken count - coming in or out ✔ 
     - Sends data about chicken count to the app ✔
 - Predators
-    - Receives (and stores) data from Arduino about predator breaches
-    - Sends data about predator breaches to the app
+    - Receives (and stores) data from Arduino about predator breaches ✔ 
+    - Sends data about predator breaches to the app ✔
     
 # Models
 - user - users and their keys ‎✔
 - humidity_data - data from Arduino about humidity‎ ✔
 - temperature_data - data from Arduino about temperature ✔
-- temperature_setting - settings on when to start heating/AC
-- sunlight_data - data from Arduino about sunlight amount ✔
+- temperature_settings - settings on when to start heating/AC
 - opening_settings - settings on when to close/open the door (based on sunlight, time, chickenout)
 - chicken_entries - entries of chicken entering/leaving the house ✔
 - chicken_counts - current number of chicken in the house ✔
-- predator_data - info about predator breaches
+- predator_breaches - info about predator breaches ✔
 
 # API
 - All API request require authentication token assigned to your user account
@@ -48,9 +46,6 @@ Written in Laravel
 ## Temperature
 - `GET /temperature` returns latest temperature with timestamp
 - `POST /temperature?value=int` saves temperature value 
-
-## Sunlight
-- `POST /sunlight?value=int` saves sunlight value
 
 ## Chicken count
 - `GET /chicken-count` returns latest number of chickens inside with timestamp
