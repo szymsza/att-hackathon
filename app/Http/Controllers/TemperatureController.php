@@ -9,7 +9,7 @@ class TemperatureController extends Controller {
 
 	public function get() {
 		$user = session("user");
-		$temperature = $user->temperature->sortByDesc("created_at")->first();
+		$temperature = $user->temperatureData->sortByDesc("created_at")->first();
     	if (!$temperature)
     		return json_encode([]);
     	return json_encode([
@@ -22,7 +22,7 @@ class TemperatureController extends Controller {
 		$user = session("user");
 		$data = [
 			"user_id" => $user->id,
-			"value" => (int)$request->temperature
+			"value" => (int)$request->value
 		];
 
 		return TemperatureData::create($data);

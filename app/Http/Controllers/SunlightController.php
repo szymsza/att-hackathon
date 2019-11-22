@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\HumidityData;
+use App\SunlightData;
 use Illuminate\Http\Request;
 
-class HumidityController extends Controller {
+class SunlightController extends Controller {
 
 	public function get() {
 		$user = session("user");
-		$humidity = $user->humidityData->sortByDesc("created_at")->first();
-    	if (!$humidity)
+		$sunlight = $user->sunlightData->sortByDesc("created_at")->first();
+    	if (!$sunlight)
     		return json_encode([]);
     	return json_encode([
-    		"date" => $humidity->created_at->format("Y-m-d H:i:s"),
-			"value" => $humidity->value
+    		"date" => $sunlight->created_at->format("Y-m-d H:i:s"),
+			"value" => $sunlight->value
 		]);
 	}
 
@@ -25,6 +25,6 @@ class HumidityController extends Controller {
 			"value" => (int)$request->value
 		];
 
-		return HumidityData::create($data);
+		return SunlightData::create($data);
 	}
 }

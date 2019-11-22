@@ -27,11 +27,15 @@ class User extends Authenticatable
         'password'
     ];
 
-    public function humidity() {
+    public function humidityData() {
 		return $this->hasMany("\App\HumidityData");
 	}
 
-	public function temperature() {
+	public function temperatureData() {
 		return $this->hasMany("\App\TemperatureData");
+	}
+
+	public function sunlightData() {
+		return $this->hasMany("\App\SunlightData");
 	}
 }
