@@ -39,6 +39,10 @@ class User extends Authenticatable
 		return $this->hasOne("\App\TemperatureSetting");
 	}
 
+	public function doorSetting() {
+		return $this->hasOne("\App\DoorSetting");
+	}
+
 	public function sunlightData() {
 		return $this->hasMany("\App\SunlightData");
 	}

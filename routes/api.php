@@ -31,3 +31,7 @@ Route::post("chicken-entry", "ChickenCountController@entry");
 // Chicken count
 Route::get("predator-breach", "PredatorBreachController@get");
 Route::post("predator-breach", "PredatorBreachController@set");
+
+// Door settings
+Route::get("door/settings", "DoorController@getSettings");
+Route::post("door/settings", "DoorController@setSettings");
