@@ -38,4 +38,12 @@ class User extends Authenticatable
 	public function sunlightData() {
 		return $this->hasMany("\App\SunlightData");
 	}
+
+	public function chickenEntries() {
+		return $this->hasMany("\App\ChickenEntries");
+	}
+
+	public function chickenCount() {
+		return $this->hasOne("\App\ChickenCount");
+	}
 }

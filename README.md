@@ -14,12 +14,12 @@ Written in Laravel
 - Door opening
     - Receives (and stores) settings from the app - times and/or brightness ✔
     - Receives (and stores) data from Arduino about sunlight ✔
-    - Receives (and stores) data from Arduino about openness
     - Sends commands to open/close the door to Arduino based on time and/or brightness and/or chicken count
     - Sends settings to the app
 - Counting chickens
-    - Receives (and stores) data from Arduino about chicken count - coming in or out
-    - Sends data about chicken count to the app
+    - Receives (and stores) settings from the app about total chicken count
+    - Receives (and stores) data from Arduino about chicken count - coming in or out ✔ 
+    - Sends data about chicken count to the app ✔
 - Predators
     - Receives (and stores) data from Arduino about predator breaches
     - Sends data about predator breaches to the app
@@ -31,9 +31,8 @@ Written in Laravel
 - temperature_setting - settings on when to start heating/AC
 - sunlight_data - data from Arduino about sunlight amount ✔
 - opening_settings - settings on when to close/open the door (based on sunlight, time, chickenout)
-- opening_fails - data about door failing to close/open
-- chicken_entries - entries of chicken entering/leaving the house
-- chicken_counts - current number of chicken in the house
+- chicken_entries - entries of chicken entering/leaving the house ✔
+- chicken_counts - current number of chicken in the house ✔
 - predator_data - info about predator breaches
 
 # API
@@ -51,4 +50,8 @@ Written in Laravel
 - `POST /temperature?value=int` saves temperature value 
 
 ## Sunlight
-- `POST /sunlight?value=int` saves sunlight value 
+- `POST /sunlight?value=int` saves sunlight value
+
+## Chicken count
+- `GET /chicken-count` returns latest number of chickens inside with timestamp
+- `POST /chicken-entry?entered=boolean` saves chicken entry/departure  
