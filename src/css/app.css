@@ -1,1 +1,16 @@
 /* Your app styles here */
+.panel-left .page-content {
+	padding-top: 0 !important;
+}
+
+.panel-left .item-inner {
+	justify-content: flex-start;
+}
+
+.panel-left .item-inner .f7-icons, .panel-left .item-inner .icon {
+	margin-right: 10px;
+}
+
+.navbar {
+	background-color: #795548  !important;
+}

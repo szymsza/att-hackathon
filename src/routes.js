@@ -1,25 +1,30 @@
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Another from './pages/Another';
+import Login from "./pages/Login";
+import Dashboard from './pages/Dashboard';
+import Temperature from './pages/Temperature';
+import Door from './pages/Door';
+import Logout from './pages/Logout';
 import NotFoundPage from './pages/not-found.vue';
 
 export default [
   {
     path: '/',
-    component: Home
+    component: Login
   },
   {
-    path: '/about/',
-    component: About
+    path: '/dashboard',
+    component: Dashboard
   },
   {
-    path: '/services/',
-    component: Services
+    path: '/temperature/',
+    component: Temperature
   },
   {
-    path: '/about/another/',
-    component: Another
+    path: '/door/',
+    component: Door
+  },
+  {
+    path: '/logout/',
+    component: Logout
   },
   {
     path: '(.*)',
