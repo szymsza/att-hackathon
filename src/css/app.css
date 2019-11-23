@@ -26,3 +26,9 @@
 	text-align: center;
 	font-size: 1.5rem
 }
+
+.big-number {
+	font-size: 1.7rem;
+	text-align: center;
+	display: block;
+}

@@ -47,29 +47,38 @@
 			};
 		},
 		created() {
-			this.$api({
-				url: "humidity",
-				method: "GET"
-			}).then(d => {
-				this.$db("humidity", d.data);
-				this.humidity = d.data;
-			});
+			if (this.$db("humidity"))
+				this.humidity = this.$db("humidity");
+			else
+				this.$api({
+					url: "humidity",
+					method: "GET"
+				}).then(d => {
+					this.$db("humidity", d.data);
+					this.humidity = d.data;
+				});
 
-			this.$api({
-				url: "temperature",
-				method: "GET"
-			}).then(d => {
-				this.$db("temperature", d.data);
-				this.temperature = d.data;
-			});
+			if (this.$db("temperature"))
+				this.temperature = this.$db("temperature");
+			else
+				this.$api({
+					url: "temperature",
+					method: "GET"
+				}).then(d => {
+					this.$db("temperature", d.data);
+					this.temperature = d.data;
+				});
 
-			this.$api({
-				url: "chicken-count",
-				method: "GET"
-			}).then(d => {
-				this.$db("chicken", d.data);
-				this.chicken = d.data;
-			});
+			if (this.$db("chicken-count"))
+				this.chicken = this.$db("chicken-count");
+			else
+				this.$api({
+					url: "chicken-count",
+					method: "GET"
+				}).then(d => {
+					this.$db("chicken-count", d.data);
+					this.chicken = d.data;
+				});
 
 			// then on every page REFRESH button in right corner + auto refresh every minute
 		}
