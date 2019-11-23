@@ -1,2 +1,2 @@
-# Happy Chick House - mobile application
+# Happy Chickhouse - mobile application
 Written in Vue Native
