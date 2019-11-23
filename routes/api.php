@@ -11,6 +11,8 @@
 |
 */
 
+// Login
+Route::get("login", "LoginController@login");
 
 // Humidity data
 Route::get("humidity", "HumidityController@get");
