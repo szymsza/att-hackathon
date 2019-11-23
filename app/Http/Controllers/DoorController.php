@@ -12,15 +12,15 @@ class DoorController extends Controller
 		$setting = $user->doorSetting;
     	if (!$setting)
     		$data = [
-    			'timer' => 0,
+    			'timer' => false,
 				'open_time' => '7:00',
 				'close_time' => '18:00',
-				'village' => 'Brno',
+				'village' => 'Hustopeče',
 				'min_chicken' => 0
 			];
     	else
     		$data = [
-    			'timer' => $setting->timer,
+    			'timer' => $setting->timer ? true : false,
 				'open_time' => $setting->open_time,
 				'close_time' => $setting->close_time,
 				'village' => $setting->village,

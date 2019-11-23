@@ -17,8 +17,8 @@ class CreateTemperatureSettingsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->boolean('active')->default(0);
-            $table->tinyInteger('min')->default(0);
-            $table->tinyInteger('max')->default(0);
+            $table->tinyInteger('min')->nullable()->default(null);
+            $table->tinyInteger('max')->nullable()->default(null);
             $table->timestamps();
         });
     }

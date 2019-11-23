@@ -35,12 +35,12 @@ class TemperatureController extends Controller {
     	if (!$setting)
     		$data = [
     			"active" => 0,
-				"min" => 0,
-				"max" => 0
+				"min" => null,
+				"max" => null
 			];
     	else
     		$data = [
-    			"active" => $setting->active,
+    			"active" => $setting->active ? true : false,
 				"min" => $setting->min,
 				"max" => $setting->max
 			];
