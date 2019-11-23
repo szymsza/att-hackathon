@@ -9,7 +9,7 @@
 			</f7-nav-title>
 		</f7-navbar>
 		<f7-block inner class="dashboard-cards">
-			<f7-card outline>
+			<f7-card>
 				<template slot="header">
 					<f7-icon f7="thermometer"/>
 				</template>
@@ -17,7 +17,7 @@
 					{{ this.temperature ? this.temperature.value : "-" }} °C
 				</template>
 			</f7-card>
-			<f7-card outline>
+			<f7-card>
 				<template slot="header">
 					<f7-icon f7="drop_fill"/>
 				</template>
@@ -25,7 +25,7 @@
 					{{ this.humidity ? this.humidity.value : "-" }}%
 				</template>
 			</f7-card>
-			<f7-card outline>
+			<f7-card>
 				<template slot="header">
 					<img src="../../static/img/icons/chick.png">
 				</template>

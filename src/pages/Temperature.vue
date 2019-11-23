@@ -61,9 +61,8 @@
 				};
 				this.$api({
 					url: "temperature/settings",
-					sendToken: false,
 					data: data
-				}).then(d => {
+				}).then(() => {
 					this.$toast("Temperature settings successfully edited");
 					this.$db("temperature-settings", data);
 				}).catch(() => {

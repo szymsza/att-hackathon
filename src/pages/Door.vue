@@ -5,7 +5,7 @@
 				<f7-link icon-f7="icon-bars" panel-open="left"></f7-link>
 			</f7-nav-left>
 			<f7-nav-title>
-				Door control
+				Door control settings
 			</f7-nav-title>
 		</f7-navbar>
 		<f7-block-title>Open and close the door</f7-block-title>
@@ -66,11 +66,47 @@
 		},
 		methods: {
 			save() {
-				// TODO send data to server and save to local DB
+				let data = {
+					timer: this.timer,
+					open_time: this.open_time,
+					close_time: this.close_time,
+					village: this.village,
+					min_chicken: this.all_chicken ? this.min_chicken : 0
+				};
+				this.$api({
+					url: "door/settings",
+					data: data
+				}).then(() => {
+					this.$toast("Door settings successfully edited");
+					this.$db("door-settings", data);
+				}).catch(() => {
+					this.$toast("Settings editation failed, please try again");
+				});
 			}
 		},
 		created() {
-			// TODO load data from db/server
+			if (this.$db("door-settings")) {
+				let settings = this.$db("door-settings");
+				this.timer = settings.timer;
+				this.open_time = settings.open_time;
+				this.close_time = settings.close_time;
+				this.village = settings.village;
+				this.all_chicken = settings.min_chicken > 0;
+				this.min_chicken = settings.min_chicken;
+			} else
+				this.$api({
+					url: "door/settings",
+					method: "GET"
+				}).then(d => {
+					let data = d.data;
+					this.$db("door-settings", data);
+					this.timer = data.timer;
+					this.open_time = data.open_time;
+					this.close_time = data.close_time;
+					this.village = data.village;
+					this.all_chicken = data.min_chicken > 0;
+					this.min_chicken = data.min_chicken;
+				});
 		}
 	};
 </script>
