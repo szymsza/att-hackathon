@@ -2,6 +2,8 @@
 // Import Vue
 import Vue from 'vue';
 
+import axios from "axios";
+
 // Import F7
 import Framework7 from 'framework7/framework7.esm.bundle.js';
 
@@ -32,35 +34,59 @@ let main = {};
 
 // Mixins
 Vue.mixin({
-  methods: {
-    // API
-    $api() {
+	methods: {
+		// API
+		$api(options) {
+			let defaults = {
+				url: "",
+				baseURL: "http://localhost/slipky/server/public/api",
+				data: {},
+				sendToken: true,
+				method: "post",
+				headers: {}
+			};
 
-    },
+			let requestOptions = {...defaults, ...options};
 
-    // Simple global database interface
+			//requestOptions.url = requestOptions.baseURL + requestOptions.url;
 
-    // @key: Index for the value to be stored under
-    // @value: null = read value; undefined = delete value; other = set value
-    $db(key, value = null) {
-      // Select request
-      if (value === null) return main[key];
+			if (requestOptions.sendToken)
+				requestOptions.data.app = this.$db("token");
 
-      // Delete request
-      if (value === undefined) return delete main[key];
+			return axios(requestOptions);
+		},
 
-      // Insert/update request
-      return (main[key] = value);
-    },
-  }
+		$toast(text) {
+			let toast = this.$f7.toast.create({
+				text: text,
+    			closeTimeout: 2000,
+			});
+			this.$f7.toast.open(toast.$el);
+		},
+
+		// Simple global database interface
+
+		// @key: Index for the value to be stored under
+		// @value: null = read value; undefined = delete value; other = set value
+		$db(key, value = null) {
+			// Select request
+			if (value === null) return main[key];
+
+			// Delete request
+			if (value === undefined) return delete main[key];
+
+			// Insert/update request
+			return (main[key] = value);
+		},
+	}
 });
 
 // Init App
 const baseApp = new Vue({
-  el: '#app',
-  template: '<app/>',
-  // Register App Component
-  components: {
-    app: App
-  }
+	el: '#app',
+	template: '<app/>',
+	// Register App Component
+	components: {
+		app: App
+	}
 });

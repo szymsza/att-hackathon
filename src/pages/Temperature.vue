@@ -16,9 +16,6 @@
       soluta totam maxime autem minima accusamus eos suscipit dignissimos
       corporis modi voluptatum fugiat!
     </f7-block>
-    <f7-list>
-      <f7-list-item link="/about/another/" title="Another Page"></f7-list-item>
-    </f7-list>
   </f7-page>
 </template>
 
