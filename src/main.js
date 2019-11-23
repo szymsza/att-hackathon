@@ -28,6 +28,33 @@ window.isiOS = Framework7.device.ios;
 // Init F7 Vue Plugin
 Framework7.use(Framework7Vue);
 
+let main = {};
+
+// Mixins
+Vue.mixin({
+  methods: {
+    // API
+    $api() {
+
+    },
+
+    // Simple global database interface
+
+    // @key: Index for the value to be stored under
+    // @value: null = read value; undefined = delete value; other = set value
+    $db(key, value = null) {
+      // Select request
+      if (value === null) return main[key];
+
+      // Delete request
+      if (value === undefined) return delete main[key];
+
+      // Insert/update request
+      return (main[key] = value);
+    },
+  }
+});
+
 // Init App
 const baseApp = new Vue({
   el: '#app',

@@ -18,7 +18,6 @@
 <script>
 import routes from './routes';
 import LeftPanel from './components/LeftPanel';
-import { EventBus } from "./event-bus";
 
 export default {
   data() {
@@ -67,14 +66,6 @@ export default {
   },
   created() {
     document.addEventListener('backbutton', this.handleBackButton);
-
-    EventBus.$on("login", token => {
-      this.token = token;
-    });
-
-    EventBus.$on("logout", () => {
-      this.token = "";
-    });
   }
 };
 </script>

@@ -13,7 +13,7 @@
 			};
 		},
 		mounted() {
-			EventBus.$emit("logout", "token");
+			this.$db("token", undefined);
 			this.$f7router.navigate("/");
 		}
 	};

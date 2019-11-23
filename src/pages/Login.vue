@@ -28,7 +28,7 @@
 		},
 		methods: {
 			login() {
-				EventBus.$emit("login", "token");
+				this.$db("token", "testoken");
 				this.$f7router.navigate("/dashboard");
 			}
 		}
