@@ -14,3 +14,15 @@
 .navbar {
 	background-color: #795548  !important;
 }
+
+.dashboard-cards .card .card-header .icon, .dashboard-cards .card .card-header img {
+	height: 70px;
+	font-size: 70px;
+	margin: 0 auto;
+	color: black;
+}
+
+.dashboard-cards .card .card-content {
+	text-align: center;
+	font-size: 1.5rem
+}
